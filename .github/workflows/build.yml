@@ -53,7 +53,7 @@ jobs:
 
   build_iosport:
     name: "Build for iOS aarch64"
-    runs-on: MacStadium
+    runs-on: macos-latest
     continue-on-error: true
     steps:
     - name: Checkout repository
