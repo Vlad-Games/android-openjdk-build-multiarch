@@ -1,0 +1,12 @@
+diff --git a/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties b/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
+index 0000000..0000001 100644
+--- a/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
++++ b/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
+@@ -19,7 +19,7 @@ Cp1250 WINDOWS-1250 0x00FF
+ # Patch attributed to havardw@underdusken.no (Håvard Wigtil)
+ Cp1251 WINDOWS-1251 0x00FF
+ Cp1252 WINDOWS-1252 0x00FF
+ ISO8859_1 ISO-8859-1 0x00FF
+-# Patch attributed to havardw@underdusken.no (Håvard Wigtil)
++# Patch attributed to havardw@underdusken.no (Havard Wigtil)
+ ISO8859-1 ISO-8859-1 0x00FF
