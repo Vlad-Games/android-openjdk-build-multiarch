@@ -83,6 +83,12 @@ fi
 # Let's print what's available
 # bash configure --help
 
+if [[ "$BUILD_IOS" == "1" ]]; then
+    FT_ARGS="--with-freetype=bundled"
+else
+    FT_ARGS="--with-freetype-lib=$FREETYPE_DIR/lib --with-freetype-include=$FREETYPE_DIR/include/freetype2"
+fi
+
 #   --with-freemarker-jar=$FREEMARKER \
 #   --with-toolchain-type=clang \
 #   --with-native-debug-symbols=none \
@@ -98,8 +104,9 @@ bash ./configure \
     --with-devkit=$TOOLCHAIN \
     --with-debug-level=$JDK_DEBUG_LEVEL \
     --with-fontconfig-include=$ANDROID_INCLUDE \
-    --with-freetype-lib=$FREETYPE_DIR/lib \
-    --with-freetype-include=$FREETYPE_DIR/include/freetype2 \
+    #--with-freetype-lib=$FREETYPE_DIR/lib \
+    #--with-freetype-include=$FREETYPE_DIR/include/freetype2 \
+    $FT_ARGS \
     $AUTOCONF_x11arg $AUTOCONF_EXTRA_ARGS \
     --x-libraries=/usr/lib \
         $platform_args || \
