@@ -89,6 +89,9 @@ else
     FT_ARGS="--with-freetype-lib=$FREETYPE_DIR/lib --with-freetype-include=$FREETYPE_DIR/include/freetype2"
 fi
 
+#--with-freetype-lib=$FREETYPE_DIR/lib \
+#--with-freetype-include=$FREETYPE_DIR/include/freetype2 \
+
 #   --with-freemarker-jar=$FREEMARKER \
 #   --with-toolchain-type=clang \
 #   --with-native-debug-symbols=none \
@@ -104,8 +107,6 @@ bash ./configure \
     --with-devkit=$TOOLCHAIN \
     --with-debug-level=$JDK_DEBUG_LEVEL \
     --with-fontconfig-include=$ANDROID_INCLUDE \
-    #--with-freetype-lib=$FREETYPE_DIR/lib \
-    #--with-freetype-include=$FREETYPE_DIR/include/freetype2 \
     $FT_ARGS \
     $AUTOCONF_x11arg $AUTOCONF_EXTRA_ARGS \
     --x-libraries=/usr/lib \
