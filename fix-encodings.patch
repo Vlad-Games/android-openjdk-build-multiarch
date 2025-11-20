@@ -1,8 +1,8 @@
 diff --git a/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties b/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
-index 0000000..0000001 100644
+index 0000000..1111111 100644
 --- a/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
 +++ b/jaxp/src/com/sun/org/apache/xml/internal/serializer/Encodings.properties
-@@ -19,7 +19,7 @@ Cp1250 WINDOWS-1250 0x00FF
+@@ -20,7 +20,7 @@ Cp1250 WINDOWS-1250 0x00FF
  # Patch attributed to havardw@underdusken.no (Håvard Wigtil)
  Cp1251 WINDOWS-1251 0x00FF
  Cp1252 WINDOWS-1252 0x00FF
@@ -10,3 +10,5 @@ index 0000000..0000001 100644
 -# Patch attributed to havardw@underdusken.no (Håvard Wigtil)
 +# Patch attributed to havardw@underdusken.no (Havard Wigtil)
  ISO8859-1 ISO-8859-1 0x00FF
+ ISO8859_2 ISO-8859-2 0x00FF
+ # I'm going to apply "ISO8859-X" variant to all these, to be safe.
