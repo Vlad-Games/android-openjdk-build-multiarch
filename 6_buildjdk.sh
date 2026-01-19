@@ -2,6 +2,10 @@
 set -e
 . setdevkitpath.sh
 
+# Force macOS SDK for host tools (required on Xcode 15+ / iOS 17+)
+export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+export MACOSX_DEPLOYMENT_TARGET=11.0
+
 export FREETYPE_DIR=$PWD/freetype-$BUILD_FREETYPE_VERSION/build_android-$TARGET_SHORT
 export CUPS_DIR=$PWD/cups-2.2.4
 export CFLAGS+=" -DLE_STANDALONE" # -I$FREETYPE_DIR -I$CUPS_DI
