@@ -60,7 +60,7 @@ jobs:
       fail-fast: false
 
     name: "Build Java ${{ matrix.version }} for iOS aarch64"
-    runs-on: MacStadium
+    runs-on: macos-latest
     continue-on-error: true
     steps:
       - name: Checkout repository
