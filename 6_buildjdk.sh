@@ -71,14 +71,21 @@ else
   else
     ln -s -f /usr/local/include/fontconfig $ANDROID_INCLUDE/
   fi
-  platform_args="--with-toolchain-type=clang --with-sysroot=$(xcrun --sdk iphoneos --show-sdk-path) \
+  IOS_SYSROOT=$(xcrun --sdk iphoneos --show-sdk-path)
+  export EXTRA_TARGET_CFLAGS="-isysroot ${IOS_SYSROOT}"
+  export EXTRA_TARGET_LDFLAGS="-isysroot ${IOS_SYSROOT}"
+  #platform_args="--with-toolchain-type=clang --with-sysroot=$(xcrun --sdk iphoneos --show-sdk-path) \
+  platform_args="--with-toolchain-type=clang \
     --with-boot-jdk=$(/usr/libexec/java_home -v $TARGET_VERSION) \
     --with-freetype=bundled \
     "
   AUTOCONF_x11arg="--with-x=/opt/X11/include/X11 --prefix=/usr/lib"
-  sameflags="-arch arm64 -DHEADLESS=1 -I$PWD/ios-missing-include -Wno-implicit-function-declaration -DTARGET_OS_OSX"
-  export CFLAGS+=" $sameflags"
-  export LDFLAGS+="-arch arm64"
+  #sameflags="-arch arm64 -DHEADLESS=1 -I$PWD/ios-missing-include -Wno-implicit-function-declaration -DTARGET_OS_OSX"
+  sameflags="-arch arm64 -DHEADLESS=1 -I$PWD/ios-missing-include -Wno-implicit-function-declaration"
+  #export CFLAGS+=" $sameflags"
+  #export LDFLAGS+="-arch arm64"
+  export CFLAGS+=" $sameflags $EXTRA_TARGET_CFLAGS"
+  export LDFLAGS+="-arch arm64 $EXTRA_TARGET_LDFLAGS"
   export BUILD_SYSROOT_CFLAGS="-isysroot ${themacsysroot}"
 
   HOMEBREW_NO_AUTO_UPDATE=1 brew install fontconfig ldid xquartz autoconf
